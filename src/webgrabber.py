@@ -6,18 +6,18 @@ from discord_webhook import DiscordWebhook
 import zipfile
 import fade 
 
-# Fonction pour télécharger une page HTML
+
 def download_page(url, folder):
     try:
         response = requests.get(url)
         response.raise_for_status()
         soup = BeautifulSoup(response.text, 'html.parser')
 
-        # Sauvegarder la page HTML
+  
         with open(os.path.join(folder, 'index.html'), 'w', encoding='utf-8') as file:
             file.write(str(soup))
 
-        # Télécharger les ressources associées (images, CSS, JS)
+  
         for resource in soup.find_all(['img', 'link', 'script']):
             src = resource.get('src') or resource.get('href')
             if src and (src.endswith('.jpg') or src.endswith('.png') or src.endswith('.css') or src.endswith('.js')):
@@ -30,7 +30,7 @@ def download_page(url, folder):
         print(f"Erreur inattendue: {e}")
         raise
 
-# Fonction pour télécharger une ressource (image, CSS, JS)
+
 def download_resource(base_url, resource_url, folder):
     try:
         if not resource_url.startswith('http'):
@@ -46,7 +46,7 @@ def download_resource(base_url, resource_url, folder):
     except requests.RequestException as e:
         print(f"Erreur lors du téléchargement de la ressource {resource_url}: {e}")
 
-# Fonction pour zipper le dossier du site
+
 def zip_site(folder):
     try:
         zip_filename = folder + '.zip'
@@ -59,7 +59,7 @@ def zip_site(folder):
         print(f"Erreur lors de la création du fichier ZIP: {e}")
         raise
 
-# Fonction pour envoyer le fichier zip au webhook Discord
+
 def send_to_discord(zip_file, webhook_url):
     try:
         webhook = DiscordWebhook(url=webhook_url)
@@ -70,11 +70,11 @@ def send_to_discord(zip_file, webhook_url):
         print(f"Erreur lors de l'envoi au webhook Discord: {e}")
         raise
 
-# Fonction pour effacer l'écran
+
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-# Fonction pour afficher le menu principal
+
 def show_main_menu():
     clear_screen()
     text = fade.greenblue ("""       ▄████████    ▄████████  ▄████████     ▄████████  ▄████████    ▄█    █▄    ▀████    ▐████▀ 
@@ -92,32 +92,32 @@ def show_main_menu():
     choice = input("Votre choix: ")
     return choice
 
-# Fonction principale
+
 def main():
     while True:
         choice = show_main_menu()
         if choice == '1':
             try:
-                # Entrée utilisateur
+       
                 url = input("Entrez l'URL du site web: ")
                 webhook_url = input("Entrez l'URL du webhook Discord: ")
                 folder_name = 'downloaded_site'
 
-                # Créer le dossier pour le site
+
                 if os.path.exists(folder_name):
                     shutil.rmtree(folder_name)
                 os.makedirs(folder_name)
 
-                # Télécharger le site
+            
                 download_page(url, folder_name)
 
-                # Zipper le site
+       
                 zip_file = zip_site(folder_name)
 
-                # Envoyer le fichier zip à Discord
+        
                 send_to_discord(zip_file, webhook_url)
 
-                # Nettoyer
+       
                 os.remove(zip_file)
                 shutil.rmtree(folder_name)
 
@@ -126,7 +126,7 @@ def main():
             except Exception as e:
                 print(f"Une erreur s'est produite: {e}")
             
-            # Attendre que l'utilisateur appuie sur "Entrée" pour revenir au menu principal
+       
             input("\nAppuyez sur Entrée pour revenir au menu principal...")
         
         elif choice == '2':
@@ -136,9 +136,9 @@ def main():
         else:
             print("Option invalide, veuillez réessayer.")
 
-        # Effacer l'écran
+
         clear_screen()
 
-# Exécution du script
+
 if __name__ == "__main__":
     main()
