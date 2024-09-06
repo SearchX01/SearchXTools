@@ -5,7 +5,7 @@ import fade
 import os
 import sys
 
-# Initialisation de colorama
+
 init(autoreset=True)
 
 def clear_screen():
@@ -13,7 +13,7 @@ def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def main():
-    # Affichage du texte avec couleurs
+   
     text = fade.greenblue("""
        ▄████████    ▄████████    ▄████████    ▄████████  ▄████████    ▄█    █▄    ▀████    ▐████▀ 
       ███    ███   ███    ███   ███    ███   ███    ███ ███    ███   ███    ███     ███▌   ████▀  
@@ -28,15 +28,15 @@ def main():
 
     text2 = fade.greenblue("Press enter if you agree to this, program will start")
     print(text2)
-    input()  # Attente de l'accord de l'utilisateur
+    input() 
 
     num_text = fade.greenblue("How Many Codes do you want to Generate ?")
     print(num_text)
 
-    # Demander combien de codes générer
+
     num = input("Please enter the number of codes to generate: ").strip()
 
-    # Assurer que l'entrée utilisateur est un nombre entier
+  
     try:
         num = int(num)
     except ValueError:
@@ -47,7 +47,7 @@ def main():
     charSet = f"{string.ascii_uppercase}{string.digits}{string.ascii_lowercase}"
     bigStr = ""
 
-    # Génération des codes
+   
     with open("Nitro Codes.txt", "w", encoding='utf-8') as file:
         print(Fore.BLUE + 'Wait, Generating for you!')
 
@@ -57,16 +57,16 @@ def main():
                 file.write(bigStr)
                 bigStr = ""
 
-        # Write remaining data
+ 
         if bigStr:
             file.write(bigStr)
 
         print(Fore.CYAN + 'Successfully generated. The codes are in Nitro Codes.txt')
 
-    # Attendre que l'utilisateur appuie sur "Enter" pour fermer
+ 
     input("Press Enter to return to the main menu...")
 
-    # Effacer l'écran et retourner au menu principal
+ 
     clear_screen()
     return
 
