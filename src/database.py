@@ -4,7 +4,7 @@ import fade
 import colorama
 from colorama import Fore
 
-# Initialisation de colorama
+
 colorama.init(autoreset=True)
 
 def clear_screen():
@@ -13,10 +13,10 @@ def clear_screen():
 
 def obfuscate_code(code):
     """Obfusquer le code donné en l'encodant en base64."""
-    # Encoder le code en base64
+
     encoded_code = base64.urlsafe_b64encode(code.encode()).decode()
 
-    # Envelopper le code encodé dans un script simple de décodage
+ 
     obfuscated_code = f"""import base64
 exec(base64.urlsafe_b64decode('{encoded_code}').decode())
 """
@@ -67,16 +67,15 @@ def main():
         clear_screen()
         display_banner()
         
-        # Attente de l'entrée de l'utilisateur
+        
         input(Fore.GREEN + "Press Enter to continue...")
         
-        # Efface l'écran
+
         clear_screen()
         
-        # Votre logique pour le menu principal ou pour d'autres actions
-        # Cela pourrait être le point d'entrée vers d'autres fonctions ou scripts
+
         print(Fore.GREEN + "Returning to main menu...")
-        break  # Sortir de la boucle pour revenir au menu principal ou pour terminer le programme
+        break  
 
 if __name__ == "__main__":
     main()
