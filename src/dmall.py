@@ -7,7 +7,7 @@ RESET = '\033[0m'
 MAGENTA_BRIGHT = '\033[95m'
 
 def center_text(text):
-    columns = os.get_terminal_size().columns  # Get console width
+    columns = os.get_terminal_size().columns
     return '\n'.join([line.center(columns) for line in text.splitlines()])
 
 def display_ascii_art():
@@ -60,7 +60,7 @@ def get_message():
 
 async def send_direct_messages(token, message):
     intents = discord.Intents.default()
-    intents.members = True  # Set to False if you haven't enabled privileged intents
+    intents.members = True 
 
     client = discord.Client(intents=intents)
 
