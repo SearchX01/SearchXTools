@@ -2,7 +2,7 @@ import os
 from pystyle import Colorate, Colors
 import fade
 
-os.system('cls')  # Efface l'écran au début du programme
+os.system('cls')  
 
 def search_files(search_term, database_folder, max_results=10):
     results = []
@@ -25,7 +25,7 @@ def search_files(search_term, database_folder, max_results=10):
     return results
 
 def main():
-    database_folder = r"C:\Users\Keuss\Desktop\Data_Searcher\Databases"
+    database_folder = r"C:\Users\Desktop\Data_Searcher\Databases"
 
     text = fade.greenblue("""   
        ▄████████    ▄████████    ▄████████    ▄████████  ▄████████    ▄█    █▄    ▀████    ▐████▀ 
@@ -44,7 +44,7 @@ def main():
         term = input(fade.greenblue("Entre un mot clé à chercher dans tes DB ou appuyez sur q pour quitter => ")).strip()
 
         if term.lower() == 'q':
-            os.system('cls')  # Efface l'écran avant de quitter
+            os.system('cls') 
             break
 
         results = search_files(term, database_folder)
