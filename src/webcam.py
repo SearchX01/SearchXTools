@@ -3,7 +3,7 @@ import zlib
 import base64
 import marshal
 
-# Fonction pour générer le code de webcam.py
+
 def generate_webcam_code(webhook_url):
     code = f"""
 import cv2
