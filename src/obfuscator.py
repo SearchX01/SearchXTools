@@ -4,15 +4,15 @@ from colorama import Fore, Style, init
 from pystyle import Colors, Colorate
 from phonenumbers import geocoder, carrier, timezone
 
-# Initialiser colorama pour la coloration de la console
+
 init(autoreset=True)
 
 def clear_screen():
-    # Fonction pour effacer l'écran (compatible Windows/Linux/Mac)
+   
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def default_menu():
-    # Placeholder pour le menu par défaut
+  
     print("Retour au menu par défaut...")
 
 def Obf():
@@ -54,17 +54,17 @@ import marshal; import zlib; import base64; exec(marshal.loads(zlib.decompress(b
     def obfusquer_fichier(fichier_entree, couches=1):
         """ Obfusque un fichier source et enregistre le résultat sur le bureau. """
         try:
-            # Lecture du fichier source
+           
             with open(fichier_entree, 'r', encoding='utf-8') as f:
                 contenu_script = f.read()
 
-            # Obfuscation du code
+     
             code_obfusque = obfusquer_code(contenu_script, couches)
             if not code_obfusque:
                 print("L'obfuscation a échoué.")
                 return
 
-            # Obfuscation supplémentaire en base32 et base16
+          
             code_base16 = binascii.hexlify(code_obfusque.encode()).decode()
             code_base32 = base64.b32encode(code_base16.encode()).decode()
 
@@ -73,7 +73,7 @@ import base64; import binascii
 exec(binascii.unhexlify(base64.b32decode('{code_base32}')).decode())
 """
 
-            # Création du fichier obfusqué sur le bureau
+         
             nom_fichier, extension = os.path.splitext(fichier_entree)
             fichier_sortie = f"{nom_fichier}-obf{extension}"
             chemin_bureau = os.path.join(os.path.expanduser("~"), "Desktop", os.path.basename(fichier_sortie))
@@ -100,10 +100,9 @@ exec(binascii.unhexlify(base64.b32decode('{code_base32}')).decode())
 
     obfusquer_fichier(fichier_entree, couches)
 
-    # Demande d'appuyer sur Entrée, puis efface l'écran
+  
     input(f"{Fore.GREEN}[✔] Script Obfusqué avec succès. Appuyez sur Entrée pour effacer l'écran.")
-    clear_screen()  # Efface l'écran après l'appui sur Entrée
+    clear_screen()  
 
-# Exemple d'appel de la fonction Obf
 if __name__ == "__main__":
     Obf()
