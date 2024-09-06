@@ -6,10 +6,10 @@ import platform
 def get_ip_and_port(domain):
     """Obtient l'adresse IP et le port d'un domaine donné."""
     try:
-        # Résolution DNS pour obtenir l'adresse IP
+      
         ip_address = socket.gethostbyname(domain)
         
-        # Affichage de l'adresse IP et du port
+
         print(f"{fade.greenblue('Domain:')} {fade.greenblue(domain)}")
         print(f"{fade.greenblue('IP Address:')} {fade.greenblue(ip_address)}")
         print(f"{fade.greenblue('Port:')} {fade.greenblue('HTTP (80) or HTTPS (443)')}")
@@ -53,7 +53,7 @@ def main():
             input(f"{fade.greenblue('Appuyez sur Entrée pour revenir au menu principal...')}")
         elif choice == '2':
             clear_screen()
-            # Efface l'écran avant de quitter
+         
             clear_screen()
             break
         else:
