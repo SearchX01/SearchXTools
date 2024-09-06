@@ -2,7 +2,7 @@ try:
     import sys
     import os
 
-    print("Installing the python modules required for the RedTiger Tool:")
+    print("Installing the python modules required for the tools:")
 
     if sys.platform.startswith("win"):
         os.system("python -m pip install --upgrade pip")
