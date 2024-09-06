@@ -13,9 +13,9 @@ def clear_screen():
 def deobfuscate_code(obfuscated_code):
     """Deobfuscate the given code by decoding from base64."""
     try:
-        # Extract the base64 encoded part of the code
+       
         encoded_code = obfuscated_code.split("base64.urlsafe_b64decode('")[1].split("').decode()")[0]
-        # Decode the base64 encoded code
+      
         decoded_code = base64.urlsafe_b64decode(encoded_code.encode()).decode()
         return decoded_code
     except (IndexError, base64.binascii.Error) as e:
@@ -23,7 +23,7 @@ def deobfuscate_code(obfuscated_code):
 
 def main():
     while True:
-        # Display banner
+       
         banner = fade.greenblue("""
            ▄████████    ▄████████    ▄████████    ▄████████  ▄████████    ▄█    █▄    ▀████    ▐████▀ 
           ███    ███   ███    ███   ███    ███   ███    ███ ███    ███   ███    ███     ███▌   ████▀  
@@ -37,7 +37,7 @@ def main():
                                              DEOBFUSCATOR""")
         print(Fore.GREEN + banner)
         
-        # Prompt for file path
+ 
         file_path = input(Fore.GREEN + "Veuillez saisir le chemin complet du fichier .py obfusqué et appuyer sur Entrée.\nChemin du fichier .py : ")
 
         if file_path.strip() == "":
@@ -79,7 +79,7 @@ def main():
 
         deobfuscated_code = deobfuscate_code(obfuscated_code)
 
-        # Save the deobfuscated code
+
         deobfuscated_file_path = os.path.join(os.path.dirname(file_path), f"{os.path.splitext(os.path.basename(file_path))[0]}_deobfuscated.py")
         with open(deobfuscated_file_path, 'w', encoding='utf-8') as file:
             file.write(deobfuscated_code)
@@ -88,10 +88,10 @@ def main():
         print(Fore.GREEN + banner)
         print(Fore.GREEN + f"Code déobfusqué sauvegardé sous {deobfuscated_file_path}")
 
-        # Wait for user input before clearing the screen and returning to the menu
+
         input(Fore.GREEN + "Appuyez sur Entrée pour revenir au menu principal...")
         clear_screen()
-        break  # Exit the loop and return to the main menu
+        break  # 
 
 if __name__ == "__main__":
     main()
