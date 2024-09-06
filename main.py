@@ -4,7 +4,7 @@ from colorama import Fore, Style
 import fade
 import sys
 
-colorama.init(autoreset=True)  # Initialize colorama
+colorama.init(autoreset=True) 
 
 def display_menu():
     """Affiche le menu principal avec des options."""
@@ -37,11 +37,11 @@ def display_menu():
     print(Fore.GREEN + menu)
 
 def main_menu():
-    # Récupérer le nom d'utilisateur
+    
     try:
-        username = os.getlogin()  # Utilise getlogin sur Windows
+        username = os.getlogin() 
     except OSError:
-        username = os.environ.get('USER')  # Utilise l'environnement sur Unix/Linux
+        username = os.environ.get('USER') 
 
     while True:
         display_menu()
