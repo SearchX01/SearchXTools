@@ -34,7 +34,6 @@ def handle_error():
 snusbase_auth = 'sbyjthkoft4yaimbwcjqpmxs8huovd'
 snusbase_api = 'https://api-experimental.snusbase.com/'
 
-#API-COMBO:
 def api_combo():
     clear_screen()
     text_default_fade = fade.greenblue(text_default)
@@ -53,7 +52,7 @@ def api_combo():
                     for item2 in out[item]:
                         l.append(item2)
                         
-                formatted_results = json.dumps(l, indent=2)  # Pretty print the results
+                formatted_results = json.dumps(l, indent=2) 
                 print("")
                 print(formatted_results)
             else:
@@ -75,9 +74,7 @@ def api_combo():
             input("\nAppuyez sur Entrée pour continuer...")
             default_menu()
 
-#-----------------------------------------------------------------
 
-#API-IP WHOIS:
 def api_ip_whois():
     clear_screen()
     text_default_fade = fade.greenblue(text_default)
@@ -107,9 +104,9 @@ def api_ip_whois():
         input("\nAppuyez sur Entrée pour continuer...")
         default_menu()
 
-#-----------------------------------------------------------------
 
-#API-EMAIL:
+
+
 def api_email():
     clear_screen()
     text_default_fade = fade.greenblue(text_default)
@@ -135,7 +132,7 @@ def api_email():
         elif termz == "menu":
             default_menu()
         else:
-        # Search Snusbase
+
             search_response = send_request('data/search', {
                 'terms': [termz],
                 'types': ["email"],
@@ -147,9 +144,9 @@ def api_email():
             input("\nAppuyez sur Entrée pour continuer...")
             default_menu()
 
-#-----------------------------------------------------------------
 
-#API-USERNAME:
+
+
 def api_username():
     clear_screen()
     text_default_fade = fade.greenblue(text_default)
@@ -175,7 +172,7 @@ def api_username():
         elif termz == "menu":
             default_menu()
         else:
-        # Search Snusbase
+  
             search_response = send_request('data/search', {
                 'terms': [termz],
                 'types': ["username"],
@@ -187,7 +184,7 @@ def api_username():
             input("\nAppuyez sur Entrée pour continuer...")
             default_menu()
 
-#-----------------------------------------------------------------
+
 
 #API-IP:
 def api_ip():
@@ -215,7 +212,7 @@ def api_ip():
         elif termz == "menu":
             default_menu()
         else:
-        # Search Snusbase
+
             search_response = send_request('data/search', {
                 'terms': [termz],
                 'types': ["lastip"],
@@ -227,9 +224,8 @@ def api_ip():
             input("\nAppuyez sur Entrée pour continuer...")
             default_menu()
 
-#-----------------------------------------------------------------
 
-#API-HASH:
+
 def api_hash():
     clear_screen()
     text_default_fade = fade.greenblue(text_default)
@@ -255,7 +251,7 @@ def api_hash():
         elif termz == "menu":
             default_menu()
         else:
-        # Search Snusbase
+ 
             search_response = send_request('data/search', {
                 'terms': [termz],
                 'types': ["hash"],
@@ -267,7 +263,7 @@ def api_hash():
             input("\nAppuyez sur Entrée pour continuer...")
             default_menu()
 
-#-----------------------------------------------------------------
+
 
 #API-PASSWORD:
 def api_password():
@@ -295,7 +291,7 @@ def api_password():
         elif termz == "menu":
             default_menu()
         else:
-        # Search Snusbase
+       
             search_response = send_request('data/search', {
                 'terms': [termz],
                 'types': ["password"],
@@ -307,9 +303,6 @@ def api_password():
             input("\nAppuyez sur Entrée pour continuer...")
             default_menu()
 
-#-----------------------------------------------------------------
-
-#API-NAME:
 def api_name():
     clear_screen()
     text_default_fade = fade.greenblue(text_default)
@@ -335,7 +328,7 @@ def api_name():
         elif termz == "menu":
             default_menu()
         else:
-        # Search Snusbase
+ 
             search_response = send_request('data/search', {
                 'terms': [termz],
                 'types': ["name"],
@@ -347,9 +340,7 @@ def api_name():
             input("\nAppuyez sur Entrée pour continuer...")
             default_menu()
 
-#-----------------------------------------------------------------
 
-#DEFAULT TEXT:
 text_default ='''   ▄████████    ▄████████    ▄████████    ▄████████  ▄████████    ▄█    █▄    ▀████    ▐████▀ 
   ███    ███   ███    ███   ███    ███   ███    ███ ███    ███   ███    ███     ███▌   ████▀  
   ███    █▀    ███    █▀    ███    ███   ███    ███ ███    █▀    ███    ███      ███  ▐███    
@@ -361,7 +352,7 @@ text_default ='''   ▄████████    ▄████████  
                                          ███    ███                                           
                                                                  LOOKUP'''
 
-#MENU:
+
 def default_menu():
     try:
         clear_screen()
@@ -377,44 +368,43 @@ def default_menu():
         choice_prompt = fade.greenblue ("[+] Entrez votre choix (1-9) : ")
         choice = input(choice_prompt)
         
-        #API EMAIL:
+   
         if choice == "1":
             api_email()
 
-        #API USERNAME:
+    
         if choice == "2":
             api_username()
 
-        #API IP:
+    
         elif choice == "3":
             api_ip()
 
-        #API IP WHOIS:
+  
         elif choice == "4":
             api_ip_whois()
 
-        #API PASSWORD:
+       
         elif choice == "5":
             api_password()
 
-        #API HASH:
+
         elif choice == "6":
             api_hash()
 
-        #API COMBO:
+        
         elif choice == "7":
             api_combo()
 
-        #API NAME:
         elif choice == "8":
             api_name()
 
-        #EXIT:
+       
         elif choice == "exit":
             clear_screen()
             exit()
 
-        #ERREUR
+    
         else:
             print("Choix invalide. Veuillez réessayer.")
             input("Appuyez sur une touche pour continuer...")
