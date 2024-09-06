@@ -6,13 +6,13 @@ from phonenumbers import geocoder, carrier, timezone
 
 def ddos():
     print(Colorate.Horizontal(Colors.blue_to_white, """
- ▄▀▀█▄▄   ▄▀▀█▄▄   ▄▀▀▀▀▄   ▄▀▀▀▀▄      ▄▀▀█▄   ▄▀▀▄ ▄▀▄ 
-█ ▄▀   █ █ ▄▀   █ █      █ █ █   ▐     ▐ ▄▀ ▀▄ █  █ ▀  █ 
-▐ █    █ ▐ █    █ █      █    ▀▄         █▄▄▄█ ▐  █    █ 
-  █    █   █    █ ▀▄    ▄▀ ▀▄   █       ▄▀   █   █    █  
- ▄▀▄▄▄▄▀  ▄▀▄▄▄▄▀   ▀▀▀▀    █▀▀▀       █   ▄▀  ▄▀   ▄▀   
-█     ▐  █     ▐            ▐          ▐   ▐   █    █    
-▐        ▐                                     ▐    ▐                     """))
+ ▄▀▀█▄▄   ▄▀▀█▄▄   ▄▀▀▀▀▄   ▄▀▀▀▀▄    
+█ ▄▀   █ █ ▄▀   █ █      █ █ █   ▐     
+▐ █    █ ▐ █    █ █      █    ▀▄      
+  █    █   █    █ ▀▄    ▄▀ ▀▄   █      
+ ▄▀▄▄▄▄▀  ▄▀▄▄▄▄▀   ▀▀▀▀    █▀▀▀      
+█     ▐  █     ▐            ▐            
+▐        ▐                                                """))
     print(f"""{Fore.LIGHTRED_EX}[☽] Démarrage du DDoS""")
 
     target = input(f"{Fore.LIGHTRED_EX}[☽] Entrez l'URL  --->   ")
