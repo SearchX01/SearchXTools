@@ -16,7 +16,7 @@ def check_token(token):
         'Content-Type': 'application/json'
     }
     
-    # Make a request to the Discord API to fetch user information
+   
     response = requests.get('https://discord.com/api/v9/users/@me', headers=headers)
     
     if response.status_code == 200:
@@ -33,7 +33,7 @@ def get_creation_date(user_id):
     discord_epoch = 1420070400000
     timestamp = ((int(user_id) >> 22) + discord_epoch) / 1000
     
-    # Use timezone-aware datetime to avoid deprecation warning
+
     creation_date = datetime.datetime.fromtimestamp(timestamp, datetime.timezone.utc)
     return creation_date.strftime('%Y-%m-%d %H:%M:%S UTC')
 
@@ -47,7 +47,7 @@ def display_user_info(user_info):
     verified = user_info.get('verified', False)
     premium_type = user_info.get('premium_type', 0)
 
-    # Determine if the user has Nitro
+   
     nitro_status = "Aucun"
     if premium_type == 1:
         nitro_status = "Nitro Classic"
@@ -56,7 +56,7 @@ def display_user_info(user_info):
 
     creation_date = get_creation_date(user_id)
 
-    # Display the information in a table-like format
+ 
     print(fade.greenblue(f"""
     Informations du compte Discord :
     ╔═════════════════════════════════╤═════════════════════════════════════════╗
@@ -91,14 +91,14 @@ text = fade.greenblue ("""
 print (text)
 def main():
     print(fade.greenblue("Entrez votre token Discord :  "))
-    token = input().strip()  # Retiré le "fade.greenblue("> ")"
+    token = input().strip()  
     
     user_info = check_token(token)
     if user_info:
-        clear_screen()  # Efface l'écran avant d'afficher les résultats
+        clear_screen()
         display_user_info(user_info)
 
-    # Wait for user input before clearing the screen and closing the script
+
     input(fade.greenblue("Appuyez sur Entrée pour quitter."))
     clear_screen()
 
