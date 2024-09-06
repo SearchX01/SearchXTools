@@ -138,11 +138,11 @@ text = fade.greenblue ("""
 print (text)
 
 def main():
-    clear_screen()  # Efface l'écran au début
+    clear_screen()  
 
     webhook_url = input(f"{fade.greenblue('Enter the Discord webhook URL: ')}").strip()
 
-    # Check if the webhook URL is valid by making a GET request
+
     try:
         response = requests.get(webhook_url)
         if response.status_code == 200:
@@ -150,12 +150,12 @@ def main():
             html_content = create_html_content()
             send_to_discord_webhook(webhook_url, html_content)
 
-            # Efface l'écran immédiatement après l'envoi
+           
             clear_screen()
 
-            # Demande à l'utilisateur d'appuyer sur Entrée pour revenir au menu
+           
             input(f"{fade.greenblue('Press Enter to return to the previous menu...')}")
-            clear_screen()  # Efface l'écran après que l'utilisateur appuie sur Entrée
+            clear_screen() 
         else:
             print(f"{fade.red('Invalid webhook URL or failed to connect. Please check the URL and try again.')}")
     except requests.RequestException as e:
