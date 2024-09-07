@@ -2,3 +2,4 @@ fade
 colorama
 phonenumbers
 os
+fade
