@@ -14,9 +14,9 @@ def get_ip_and_port(domain):
         print(f"{fade.greenblue('IP Address:')} {fade.greenblue(ip_address)}")
         print(f"{fade.greenblue('Port:')} {fade.greenblue('HTTP (80) or HTTPS (443)')}")
     except socket.gaierror:
-        print(f"{fade.red('Error: Invalid domain or unable to resolve IP.')}")
+        print(f"{fade.greenblue('Error: Invalid domain or unable to resolve IP.')}")
     except Exception as e:
-        print(f"{fade.red(f'An unexpected error occurred: {e}')}")
+        print(f"{fade.greenblue(f'An unexpected error occurred: {e}')}")
     
 def clear_screen():
     """Efface l'écran du terminal pour différentes plateformes."""
@@ -57,7 +57,7 @@ def main():
             clear_screen()
             break
         else:
-            print(f"{fade.red('Option invalide. Veuillez choisir 1 ou 2.')}")
+            print(f"{fade.greenblue('Option invalide. Veuillez choisir 1 ou 2.')}")
             input(f"{fade.greenblue('Appuyez sur Entrée pour essayer à nouveau...')}")
 
 if __name__ == "__main__":
