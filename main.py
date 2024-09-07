@@ -32,7 +32,7 @@ def display_menu():
    ║  {17} SearchX Website     ║ ║  {21} SearchX Phone Info  ║ ║  {25} SearchX Tokn brute║║  {29} SearchX TECHS       ║
    ║  {18} SearchX Tiktok boost║ ║  {22} SearchX DDOS        ║ ║  {26} SearchX Hypesquad ║║  {30} SearchX VPN         ║
    ║  {19} SearchX Cookie Steal║ ║  {23} SearchX Name Track  ║ ║  {27} SearchX API       ║║  {31} SearchX PROXIES     ║
-   ║  {20} SearchX Roblox Info ║ ║  {24} SearchX Token Steal ║ ║  {28} SearchX Socials   ║║  {32} SearchX SOON        ║
+   ║  {20} SearchX Roblox Info ║ ║  {24} SearchX Token Steal ║ ║  {28} SearchX Socials   ║║  {32} SearchX UPDATER     ║
    ╚═══                     ═══╝ ╚═══                     ═══╝ ╚═══                   ═══╝╚═══                     ═══╝""")
     print(Fore.GREEN + menu)
 
