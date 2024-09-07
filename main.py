@@ -87,7 +87,9 @@ def main_menu():
         elif choice == '16':
             os.system('cls' if os.name == 'nt' else 'clear')
             os.system('python src/webcam.py')             
-        
+        elif choice == '32':
+            os.system('cls' if os.name == 'nt' else 'clear')
+            os.system('python src/update.py')   
         
         
         
