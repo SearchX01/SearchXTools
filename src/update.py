@@ -6,7 +6,7 @@ import stat
 
 repo_url = "https://github.com/SearchX01/SearchXTools/"
 destination_src = "src"
-destination_main = "."  # Chemin relatif pour le fichier main.py
+destination_main = "."  
 
 def clear_console():
     if platform.system() == "Windows":
