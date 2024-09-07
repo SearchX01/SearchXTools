@@ -87,10 +87,18 @@ def main_menu():
         elif choice == '12':
             os.system('cls' if os.name == 'nt' else 'clear')
             os.system('python src/keylogger.py')        
+        elif choice == '13':
+            os.system('cls' if os.name == 'nt' else 'clear')
+            os.system('python src/darkgpt.py')
+        elif choice == '14':
+            os.system('cls' if os.name == 'nt' else 'clear')
+            os.system('python src/iajailbreak.py')                       
+        elif choice == '15':
+            os.system('cls' if os.name == 'nt' else 'clear')
+            os.system('python src/codegpt.py')          
         elif choice == '16':
             os.system('cls' if os.name == 'nt' else 'clear')
-            os.system('python src/webcam.py')             
-            os.system('python src/keylogger.py')        
+            os.system('python src/webcam.py')          
         elif choice == '32':
             os.system('cls' if os.name == 'nt' else 'clear')
             os.system('python src/update.py')           
