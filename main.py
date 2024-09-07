@@ -45,8 +45,10 @@ def main_menu():
 
     while True:
         display_menu()
-        choice_prompt = fade.greenblue(f"┌───{{{username}}}-(@SearchX)-(.gg/searchx)\n└─> ")
+        # Change the prompt to mimic a Kali Linux style
+        choice_prompt = f"{Fore.GREEN}{username}@searchx:~$ " 
 
+        # Print the prompt and flush the output
         sys.stdout.write(choice_prompt)  
         sys.stdout.flush()  
         choice = input()  
