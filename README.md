@@ -7,7 +7,8 @@
 
 **NOUS NE SOMME EN AUCUN RESPONSABLE DE VOS ACTES AVEC CETTE BOITE D'OUTILS** !
 
-**conseile ajoute un texte qui dis searchx a été développé uniquement à des fins éducatives. Ce projet a été créé avec de bonnes intentions et est destiné à un usage personnel uniquement. En choisissant cet outil, vous reconnaissez accepter l’entière responsabilité de toutes les conséquences qui pourraient résulter de vos actions. !**
+**SEARCHX A ÉTÉ DÉVELOPPÉ UNIQUEMENT À DES FINS ÉDUCATIVES. CE PROJET A ÉTÉ CRÉÉ AVEC DE BONNES INTENTIONS ET EST DESTINÉ À UN USAGE PERSONNEL UNIQUEMENT. EN CHOISISSANT CET OUTIL, VOUS RECONNAISSEZ ACCEPTER L’INTÉGRALE RESPONSABILITÉ DE TOUTES LES CONSÉQUENCES QUI POURRAIENT RÉSULTER DE VOS ACTIONS.
+ !**
 
 
 ![SearchX lookup](https://github.com/user-attachments/assets/a19750f6-3b98-4ec9-8c0b-ef0d78ef7975)
