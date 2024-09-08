@@ -8,7 +8,6 @@ import pystyle
 colorama.init(autoreset=True) 
 
 def display_menu():
-    """Affiche le menu principal avec des options."""
     text = fade.greenblue("""
        ▄████████    ▄████████    ▄████████    ▄████████  ▄████████    ▄█    █▄    ▀████    ▐████▀ 
       ███    ███   ███    ███   ███    ███   ███    ███ ███    ███   ███    ███     ███▌   ████▀  
@@ -45,13 +44,10 @@ def main_menu():
 
     while True:
         display_menu()
-      
         choice_prompt = f"{Fore.GREEN}{username}@searchx:~$ " 
-
-    
         sys.stdout.write(choice_prompt)  
         sys.stdout.flush()  
-        choice = input()  
+        choice = input().strip()  
 
         if choice == '1':
             os.system('cls' if os.name == 'nt' else 'clear')
@@ -104,12 +100,15 @@ def main_menu():
         elif choice == '19':
             os.system('cls' if os.name == 'nt' else 'clear')
             os.system('python src/antilinkbypass.py')         
-         elif choice == '32':
+        elif choice == '32':
             os.system('cls' if os.name == 'nt' else 'clear')
             os.system('python src/update.py')           
-elif choice == '33':
+        elif choice == '33':
             print(Fore.GREEN + "Sortie du programme...")
             break
+        elif choice == '':
+            os.system('cls' if os.name == 'nt' else 'clear')
+            continue
         else:
             print(Fore.RED + "Choix non valide. Veuillez réessayer.")
             input(Fore.GREEN + "Appuyez sur Entrée pour continuer...")
