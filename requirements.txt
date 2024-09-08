@@ -1,6 +1,5 @@
 fade
 colorama
 phonenumbers
-os
 pystyle
 gitpython
