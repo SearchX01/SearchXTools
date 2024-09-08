@@ -3,3 +3,5 @@ colorama
 phonenumbers
 pystyle
 gitpython
+discord
+discord.py
