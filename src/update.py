@@ -3,24 +3,43 @@ import shutil
 from git import Repo
 import platform
 import stat
+import subprocess
 
 repo_url = "https://github.com/SearchX01/SearchXTools/"
 destination_src = "src"
-destination_main = "."  
+destination_main = "."
 
 def clear_console():
+    
     if platform.system() == "Windows":
         os.system('cls')
     else:
         os.system('clear')
 
 def on_rm_error(func, path, exc_info):
+   
     os.chmod(path, stat.S_IWRITE)  
     os.remove(path)
 
-def update_python_files(repo_url, destination_src, destination_main):
+def install_git_if_missing():
+    """Installer Git si nécessaire. Fonctionne sous Linux et Windows."""
+    try:
+        
+        subprocess.run(["git", "--version"], check=True)
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        if platform.system() == "Windows":
+            print("Git n'est pas installé. Téléchargez-le ici : https://git-scm.com/downloads")
+        else:
+            print("Git n'est pas installé. Installation via le gestionnaire de paquets.")
+            try:
+                subprocess.run(["sudo", "apt-get", "install", "git", "-y"], check=True)
+            except subprocess.CalledProcessError:
+                print("Erreur lors de l'installation de Git. Veuillez installer Git manuellement.")
+
+def update_files(repo_url, destination_src, destination_main):
     temp_dir = os.path.join(os.getcwd(), "temp_clone")
     
+   
     if os.path.exists(temp_dir):
         shutil.rmtree(temp_dir, onerror=on_rm_error)
 
@@ -37,7 +56,8 @@ def update_python_files(repo_url, destination_src, destination_main):
                 source_path = os.path.join(repo_src_dir, item)
                 destination_path = os.path.join(destination_src, item)
                 
-                if os.path.isfile(source_path) and item.endswith(".py"):
+                
+                if os.path.isfile(source_path) and (item.endswith(".py") or item.endswith(".txt")):
                     shutil.copy2(source_path, destination_path)
                     print(f"Fichier {item} mis à jour.")
                 elif os.path.isdir(source_path):
@@ -64,6 +84,11 @@ def update_python_files(repo_url, destination_src, destination_main):
             shutil.rmtree(temp_dir, onerror=on_rm_error)
         print("Mise à jour terminée et dossier temporaire supprimé.")
 
-update_python_files(repo_url, destination_src, destination_main)
+
+install_git_if_missing()
+
+
+update_files(repo_url, destination_src, destination_main)
+
 
 clear_console()
