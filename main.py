@@ -32,7 +32,7 @@ def display_menu():
    ╔═══                     ═══╗ ╔═══                     ═══╗ ╔═══                   ═══╗╔═══                     ═══╗
    ║  {17} SearchX Website     ║ ║  {21} SearchX Phone Info  ║ ║  {25} SearchX Tokn brute║║  {29} SearchX TECHS       ║
    ║  {18} SearchX Tiktok boost║ ║  {22} SearchX DDOS        ║ ║  {26} SearchX Hypesquad ║║  {30} SearchX VPN         ║
-   ║  {19} SearchX Cookie Steal║ ║  {23} SearchX Name Track  ║ ║  {27} SearchX API       ║║  {31} SearchX PROXIES     ║
+   ║  {19} SearchX antilink byp║ ║  {23} SearchX Name Track  ║ ║  {27} SearchX API       ║║  {31} SearchX PROXIES     ║
    ║  {20} SearchX Roblox Info ║ ║  {24} SearchX Token Steal ║ ║  {28} SearchX Socials   ║║  {32} SearchX UPDATER     ║
    ╚═══                     ═══╝ ╚═══                     ═══╝ ╚═══                   ═══╝╚═══                     ═══╝""")
     print(Fore.GREEN + menu)
@@ -45,10 +45,10 @@ def main_menu():
 
     while True:
         display_menu()
-        # Change the prompt to mimic a Kali Linux style
+      
         choice_prompt = f"{Fore.GREEN}{username}@searchx:~$ " 
 
-        # Print the prompt and flush the output
+    
         sys.stdout.write(choice_prompt)  
         sys.stdout.flush()  
         choice = input()  
@@ -101,11 +101,13 @@ def main_menu():
         elif choice == '16':
             os.system('cls' if os.name == 'nt' else 'clear')
             os.system('python src/webcam.py')          
-        elif choice == '32':
+        elif choice == '19':
+            os.system('cls' if os.name == 'nt' else 'clear')
+            os.system('python src/antilinkbypass.py')         
+         elif choice == '32':
             os.system('cls' if os.name == 'nt' else 'clear')
             os.system('python src/update.py')           
-        
-        elif choice == '33':
+elif choice == '33':
             print(Fore.GREEN + "Sortie du programme...")
             break
         else:
