@@ -1,0 +1,11 @@
+fade
+colorama
+phonenumbers
+pystyle
+gitpython
+discord
+discord.py
+opencv-python
+pillow
+requests
+pyshorteners
