@@ -10,3 +10,4 @@ pillow
 requests
 pyshorteners
 bs4
+discord_webhook
