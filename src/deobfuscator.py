@@ -7,11 +7,11 @@ import fade
 colorama.init(autoreset=True)
 
 def clear_screen():
-    """Clear the terminal screen."""
+    
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def deobfuscate_code(obfuscated_code):
-    """Deobfuscate the given code by decoding from base64."""
+    
     try:
        
         encoded_code = obfuscated_code.split("base64.urlsafe_b64decode('")[1].split("').decode()")[0]
