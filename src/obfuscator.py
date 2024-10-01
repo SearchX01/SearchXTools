@@ -31,11 +31,11 @@ def Obf():
     print(banner)
 
     def generer_chaine_aleatoire(longueur=10):
-        """ Génère une chaîne aléatoire de la longueur spécifiée. """
+        
         return ''.join(random.choices(string.ascii_letters + string.digits, k=longueur))
 
     def obfusquer_code(code_source, couches=1):
-        """ Obfusque le code source en utilisant marshal, zlib et base64 sur plusieurs couches. """
+        
         code = code_source
         for _ in range(couches):
             try:
