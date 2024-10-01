@@ -4,7 +4,7 @@ import os
 import platform
 
 def get_ip_and_port(domain):
-    """Obtient l'adresse IP et le port d'un domaine donné."""
+    
     try:
       
         ip_address = socket.gethostbyname(domain)
@@ -19,11 +19,11 @@ def get_ip_and_port(domain):
         print(f"{fade.greenblue(f'An unexpected error occurred: {e}')}")
     
 def clear_screen():
-    """Efface l'écran du terminal pour différentes plateformes."""
+    
     os.system('cls' if platform.system() == 'Windows' else 'clear')
 
 def display_main_menu():
-    """Affiche le menu principal."""
+    
     clear_screen()
     text = fade.greenblue("""
        ▄████████    ▄████████    ▄████████    ▄████████  ▄████████    ▄█    █▄    ▀████    ▐████▀ 
