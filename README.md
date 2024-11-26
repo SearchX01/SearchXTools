@@ -42,11 +42,11 @@ et bien plus encore !
 </p>
 
 
-<h2>🔗・Credits:</h2>
+<h2>🔗・Credits: WalSo'211 x Purple</h2>
 
 <p>
   - <a href="https://discord.gg/searchx">Discord</a><br>
-  - Creator: venz.db and purple on Discord<br>
+  - Creator: walso.ot & purple__ on Discord<br>
 </p>
 
 ![SearchX lookup](https://github.com/user-attachments/assets/a19750f6-3b98-4ec9-8c0b-ef0d78ef7975)
